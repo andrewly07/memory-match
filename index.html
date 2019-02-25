@@ -2,94 +2,147 @@
 <html>
 <head>
     <title>Memory Game</title>
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-
-
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 
 </head>
 
 <body>
-<div class="header"></div>
-    <div class="title"></div>
+<div class="header">
+    <div class="title">Chain of Memories Match Game</div>
+    <div class="settings"></div>
+    <div class="about"><a href="url">About</a></div>
+</div>
 <div class="mainpage">
-    <div class="stats"></div>
+    <div class="stats">STATS
+        <div class="games-played">
+        <div class="label">Games Played:</div>
+            <div class="value"></div>
+        </div>
+     <div class="attempts">
+         <div class="label">Attempts:</div>
+         <div class="value"></div>
+     </div>
+        <div class="accuracy">
+            <div class="label">Accuracy:</div>
+            <div class="value"></div>
+        </div>
+            <button onclick="resetButton()">Reset</button>
+    </div>
+
     <div class="game-area">
         <div class="column">
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/7/70/Sora_BS-1.png">
+                </div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/7/70/Sora_BS-1.png">
+                </div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/2/2d/Kairi_LaD-5.png">
+                </div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/2/2d/Kairi_LaD-5.png">
+                </div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/9/9c/Riku_ADA-1.png">
+                </div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/9/9c/Riku_ADA-1.png">
+                </div>
                 <div class="back"></div>
             </div>
         </div>
         <div class="column">
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/8/88/Goofy_BS-7.png">
+                </div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/8/88/Goofy_BS-7.png">
+                </div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/5/55/Donald_Duck_BS-4.png">
+                </div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/5/55/Donald_Duck_BS-4.png">
+                </div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/e/e5/Ansem_LaD-4.png">
+                </div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front"></div>
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/e/e5/Ansem_LaD-4.png">
+                </div>
+                <div class="back"></div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/4/43/Roxas_BoD-9.png">
+                </div>
+                <div class="back"></div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/4/43/Roxas_BoD-9.png">
+                </div>
+                <div class="back"></div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/c/cb/Axel_BoD-7.png">
+                </div>
+                <div class="back"></div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/c/cb/Axel_BoD-7.png">
+                </div>
+                <div class="back"></div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/2/22/The_King_LaD-91.png">
+                </div>
+                <div class="back"></div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="https://www.khwiki.com/images/2/22/The_King_LaD-91.png">
+                </div>
                 <div class="back"></div>
             </div>
         </div>
