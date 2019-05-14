@@ -1,155 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Memory Game</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <head>
+        <title>Memory Match</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="controller.js"></script>
+        <script src="yugioh.js" type="text/javascript"></script>
+        <link href="about.html" type="text/html">
+        <link rel="stylesheet" type="text/css" href="cardstyle.css">
 
-</head>
-
-<body>
-<div class="header">
-    <div class="title">Chain of Memories Match Game</div>
-    <div class="settings"></div>
-    <div class="about"><a href="url">About</a></div>
-</div>
-<div class="mainpage">
-    <div class="stats">STATS
-        <div class="games-played">
-        <div class="label">Games Played:</div>
-            <div class="value"></div>
+    </head>
+    <body>
+      <div class="introPage">
+        <img src="yugiohpictures/introcover.jpg" alt="intro pic">
+        <button id="playButton" class="btn-danger lg" type="button">START</button>
+      </div>
+      <div class="mainContainer hide">
+        <div class="header">
+          <div class="logo">
+            <div class="lifepoints"></div>   
+          </div>
+          <button type="text" id="aboutButton" class="btn-warning" onclick="location.href='https://www.yugioh.com/'">About</button>
+          <button type="button" id="resetButton" class="btn-danger" value="Refresh Page" onclick="game.resetGame()">Reset</button>
+              <div class="statsmenu">
+              <div class="attempts">
+                <span class="label">Attempts:</span><span class="value"></span>
+              </div>   
+              <div class="accuracy">
+                <span class="label">Accuracy:</span><span class="value"></span>
+              </div>
+              <div class="matches">
+                <span class="label">Matches:</span><span class="value"></span>
+              </div>
+              <div class="gamesplayed">
+                <span class="label">Games Played:</span><span class="value"></span>
+              </div> 
+          </div>
         </div>
-     <div class="attempts">
-         <div class="label">Attempts:</div>
-         <div class="value"></div>
-     </div>
-        <div class="accuracy">
-            <div class="label">Accuracy:</div>
-            <div class="value"></div>
+        <div class="cardContainer">
         </div>
-            <button onclick="resetButton()">Reset</button>
-    </div>
+      </div>
+             <div id="loserModal" class="modal-content loser hide">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" aria-label="close">
+                &times;
+              </button>
+              <h4 class="modal-title">I Lost...NOOOOOO!</h4>
+            </div>
+            <div class="modal-body2">
+              <img src="https://media.giphy.com/media/K7NHFtsLG4nqU/giphy.gif" alt="kaiba losing"/>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-warning btn-block" data-dismiss="modal" onclick="window.location.reload()">YOU LOST!</button> 
+            </div>
+          </div> 
 
-    <div class="game-area">
-        <div class="column">
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/7/70/Sora_BS-1.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/7/70/Sora_BS-1.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/2/2d/Kairi_LaD-5.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/2/2d/Kairi_LaD-5.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/9/9c/Riku_ADA-1.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/9/9c/Riku_ADA-1.png">
-                </div>
-                <div class="back"></div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/8/88/Goofy_BS-7.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/8/88/Goofy_BS-7.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/5/55/Donald_Duck_BS-4.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/5/55/Donald_Duck_BS-4.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/e/e5/Ansem_LaD-4.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/e/e5/Ansem_LaD-4.png">
-                </div>
-                <div class="back"></div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/4/43/Roxas_BoD-9.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/4/43/Roxas_BoD-9.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/c/cb/Axel_BoD-7.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/c/cb/Axel_BoD-7.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/2/22/The_King_LaD-91.png">
-                </div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="https://www.khwiki.com/images/2/22/The_King_LaD-91.png">
-                </div>
-                <div class="back"></div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-</body>
-
+      <div id="winnerModal" class="modal-content winner hide">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">HEART OF THE CARDS!</h4>
+          </div>
+          <div class="modal-body2">
+            <img src="https://media.giphy.com/media/Snd51fjjX6s0M/giphy.gif" alt="yugi draws exodia"/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning btn-block" data-dismiss="modal" onclick="window.location.reload()">YOU'VE WON!</button> 
+          </div>
+        </div>                
+    </body>
 </html>
+
