@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Memory Match</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Yu-Gi-Oh Memory Match</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="controller.js"></script>
-        <script src="yugioh.js" type="text/javascript"></script>
-        <link href="about.html" type="text/html">
-        <link rel="stylesheet" type="text/css" href="cardstyle.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="main.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" type="image/png" href="/images/ygorgfavicon.png">
 
     </head>
     <body>
       <div class="introPage">
-        <img src="yugiohpictures/introcover.jpg" alt="intro pic">
+        <img src="images/introcover.jpg" alt="intro pic">
         <button id="playButton" class="btn-danger lg" type="button">START</button>
       </div>
       <div class="mainContainer hide">
@@ -22,7 +20,7 @@
           <div class="logo">
             <div class="lifepoints"></div>   
           </div>
-          <button type="text" id="aboutButton" class="btn-warning" onclick="location.href='https://www.yugioh.com/'">About</button>
+          <button type="text" id="aboutButton" class="btn-warning" onclick="location.href='https://www.andrewjly.com/'">About</button>
           <button type="button" id="resetButton" class="btn-danger" value="Refresh Page" onclick="game.resetGame()">Reset</button>
               <div class="statsmenu">
               <div class="attempts">
@@ -44,16 +42,15 @@
       </div>
              <div id="loserModal" class="modal-content loser hide">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" aria-label="close">
-                &times;
-              </button>
-              <h4 class="modal-title">I Lost...NOOOOOO!</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" aria-label="close"> &times; 
+        </button>
+              <h4 class="modal-title">I-I LOST!?...NOOOOOO!</h4>
             </div>
             <div class="modal-body2">
               <img src="https://media.giphy.com/media/K7NHFtsLG4nqU/giphy.gif" alt="kaiba losing"/>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-warning btn-block" data-dismiss="modal" onclick="window.location.reload()">YOU LOST!</button> 
+              <button type="button" class="btn btn-danger btn-block" data-dismiss="modal" onclick="window.location.reload()">YOU LOST!</button> 
             </div>
           </div> 
 
@@ -62,13 +59,13 @@
             <button type="button" class="close" data-dismiss="modal">
               &times;
             </button>
-            <h4 class="modal-title">HEART OF THE CARDS!</h4>
+            <h4 class="modal-title">YOU HAVE THE HEART OF THE CARDS!</h4>
           </div>
           <div class="modal-body2">
             <img src="https://media.giphy.com/media/Snd51fjjX6s0M/giphy.gif" alt="yugi draws exodia"/>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-warning btn-block" data-dismiss="modal" onclick="window.location.reload()">YOU'VE WON!</button> 
+            <button type="button" class="btn btn-danger btn-block" data-dismiss="modal" onclick="window.location.reload()">YOU'VE WON!</button> 
           </div>
         </div>                
     </body>

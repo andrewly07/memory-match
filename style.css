@@ -1,7 +1,6 @@
 body {
     
-    background-image: url('yugiohpictures/duelbackground.jpg');
-    background-repeat: no-repeat;
+    background-image: url('images/duelbackground.jpg');
     background-size: cover;
     background-position: center;
     border: goldenrod;   
@@ -11,7 +10,7 @@ body {
 }
 .logo{
 
-    background-image: url('yugiohpictures/YamiYugi.png');
+    background-image: url('images/YamiYugi.png');
     height: 100px;
     width: 250px;
     max-width: 250px;
@@ -24,7 +23,7 @@ body {
 }
 .header{  
     height: 22%;
-    background-image: url('yugiohpictures/yugiohlogo.png');
+    background-image: url('images/yugiohlogo.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 35%;
@@ -34,6 +33,10 @@ body {
 
   
    
+}
+.label{
+  font-size: 100%;
+  font-weight: bold;
 }
 
 .header > * {
@@ -100,7 +103,7 @@ body {
   color: white;
 }
 .lifepoints{
-    background-image: url('yugiohpictures/lifepointspanel.png');
+    background-image: url('images/lifepointspanel.png');
     background-size: contain;
     background-repeat: no-repeat;  
     height: 100px;
@@ -118,7 +121,7 @@ body {
 
  .cardContainer{
   width: 100vw;
-  height: 78%;
+  height: 75%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -126,20 +129,21 @@ body {
   } 
 
 .card{
-    position: relative;
-    height: 29vh;
-    width: 20vh; 
-    margin: 0 40px;
-    background-color: transparent;
- 
-  } 
+  position: relative;
+  height: 33%;
+  width: 8%;
+  margin: 0 45px;
+  background-color: transparent;
+} 
+
 
 .front, .back{
     position: absolute;
-    height: 29vh;
-    width: 20vh;  
+    height: 100%;
+    width: 100%;  
     background-size: contain;
     display: inline-block;
+    background-repeat: no-repeat;
   }
   .front{
     animation-name: glow;
@@ -167,15 +171,15 @@ body {
 
 
 .modal-content {
-
+  background-color: goldenrod;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  overflow: auto;
+}
 
-      
-  }
 .loser{
   display: none;
 } 

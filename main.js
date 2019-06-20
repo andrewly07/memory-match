@@ -48,7 +48,12 @@ class MemoryMatchGame{
     this.hideBothCards = this.hideBothCards.bind(this);
     this.clickedCards = [];
     this.newArray = [];
-
+    this.stats = {
+      matches: 0,
+      attempts: 0,
+      accuracy: 0,
+      games_played: 0
+    };
     this.addEventHandlers();
     this.resetGame = this.resetGame.bind(this);
   }
@@ -59,7 +64,7 @@ class MemoryMatchGame{
   }
 
   playSound() {
-    var player = new Audio('yugiohpictures/yugiohthemesong.mp3');
+    var player = new Audio('images/yugiohthemesong.mp3');
     player.volume = .4;
     player.play();
   }
@@ -96,7 +101,7 @@ class MemoryMatchGame{
     if(this.clickedCards.length === 2){
       this.checkForMatch();
     }
-    if(match_counter === total_possible_matches){
+    if(this.stats.matches === total_possible_matches){
       console.log('You have won!');
       showWinModal();
     } 
@@ -105,11 +110,11 @@ class MemoryMatchGame{
     if(this.clickedCards[0].getValue() === this.clickedCards[1].getValue()){
       console.log('match!');
       this.clickedCards = [];
-      match_counter++;
-      attempts++;
+      this.stats.matches++;
+      this.stats.attempts++;
     } else {
-      this.hideCardsInTime( 500 );
-      attempts++;
+      this.hideCardsInTime( 200 );
+      this.stats.attempts++;
       pointCounter -= 1000;
       $(".lifepoints").text(pointCounter);
       
@@ -131,21 +136,21 @@ class MemoryMatchGame{
     pointCounter = 8000;
     $('.front').show();
     $('.lifepoints').text(pointCounter);
-    games_played++;
-    matches = 0;
-    attempts = 0;
-    accuracy = 0;
-    this.display_stats();
+    this.stats.games_played++;
+    this.stats.matches = 0;
+    this.stats.attempts = 0;
+    this.stats.accuracy = 0;
+    this.stats.display_stats();
   }
   display_stats(){
  
-    $('.attempts .value').text(this.attempts);
-    $('.accuracy .value').text(this.accuracy);
-    $('.gamesplayed .value').text(this.games_played);
-    $('.matches .value').append(this.matches);
+    $('.attempts .value').text(this.stats.attempts);
+    $('.accuracy .value').text(this.stats.accuracy);
+    $('.gamesplayed .value').text(this.stats.games_played);
+    $('.matches .value').text(this.stats.matches);
   
   }
-  
+
   
 }
 
@@ -209,11 +214,10 @@ function showLifePoints(){
 
 function display_stats(){
  
- 
-  $('.attempts .value').text(this.attempts);
-  $('.accuracy .value').text(this.accuracy);
-  $('.gamesplayed .value').text(this.games_played);
-  $('.matches .value').append(this.matches);
+  $('.attempts .value').text(this.stats.attempts);
+  $('.accuracy .value').text(this.stats.accuracy);
+  $('.gamesplayed .value').text(this.stats.games_played);
+  $('.matches .value').text(this.stats.matches);
 
 }
 
@@ -227,5 +231,6 @@ function showWinModal(){
    $('.loser').modal('hide');
  }
 
- 
-
+//  function clickOffScreenModal(){
+//    $('#loserModal').modal('hide');
+//  }
