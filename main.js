@@ -74,7 +74,10 @@ class MemoryMatchGame{
     lifeSound.volume = 1;
     lifeSound.play();
   }
-
+  lifepointAnimate(){
+    $('.lifepoints').fadeOut("slow").text(this.pointCounter); 
+    $('.lifepoints').fadeIn("slow").text(this.pointCounter); 
+  }
   handlePlayButton(){
     $('.introPage').toggleClass('hide');
     $('.mainContainer').removeClass('hide');
@@ -125,6 +128,7 @@ class MemoryMatchGame{
       pointCounter -= 1000;
       $(".lifepoints").text(pointCounter);
       this.lifepointSound();
+      this.lifepointAnimate();
 
       
     }
@@ -217,6 +221,7 @@ class MMCard{
     this.domElements.container.append(this.domElements.back,this.domElements.front );
     return this.domElements.container;
   }
+
 }
 
 function showLifePoints(){
