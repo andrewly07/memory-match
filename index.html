@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Yu-Gi-Oh Memory Match</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,25 +21,27 @@
           <div class="logo">
             <div class="lifepoints"></div>   
           </div>
-          <button type="text" id="aboutButton" class="btn-warning" onclick="location.href='https://www.andrewjly.com/'">About</button>
-          <button type="button" id="resetButton" class="btn-danger" value="Refresh Page" onclick="game.resetGame()">Reset</button>
-              <div class="statsmenu">
+          <a type="text" id="aboutButton" class="btn btn-warning" href="https://www.andrewly.dev/" target="_blank">About</a>
+          <a type="button" id="resetButton" class="btn btn-danger" value="Refresh Page" onclick="game.resetGame()">Reset</a>
+            <div class="statsmenu">
               <div class="attempts">
-                <span class="label">Attempts:</span><span class="value"></span>
+                <div class="label">Attempts:</div><div class="value"></div>
               </div>   
               <div class="accuracy">
-                <span class="label">Accuracy:</span><span class="value"></span>
+                <div class="label">Accuracy:</div><div class="value"></div>
               </div>
               <div class="matches">
-                <span class="label">Matches:</span><span class="value"></span>
+                <div class="label">Matches:</div><div class="value"></div>
               </div>
               <div class="gamesplayed">
-                <span class="label">Games Played:</span><span class="value"></span>
+                <div class="label">Games Played:</div><div class="value"></div>
               </div> 
           </div>
         </div>
+        <div class="boardContainer">
         <div class="cardContainer">
         </div>
+      </div>
       </div>
              <div id="loserModal" class="modal-content loser hide">
             <div class="modal-header">

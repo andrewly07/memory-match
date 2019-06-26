@@ -59,7 +59,8 @@ class MemoryMatchGame{
   }
 
   addEventHandlers(){
-    $('#playButton').click(this.handlePlayButton);
+    // $('#playButton').click(this.handlePlayButton);
+    this.handlePlayButton();
     $("#playButton").click(this.playSound);
   }
 
@@ -80,7 +81,9 @@ class MemoryMatchGame{
       var card = new MMCard('https://vignette.wikia.nocookie.net/yugioh/images/d/d7/Back-Anime-DM.png/revision/latest?cb=20071029201207', this.newArray[i], this.handleChildClick);
       this.cards.push(card);
       var cardDomElement = card.render();
-      $(".cardContainer").append( cardDomElement );
+      var column = $('<div>').addClass('column');
+      column.append(cardDomElement);
+      $(".cardContainer").append(column);
     }
   }
   shuffle(){
@@ -113,7 +116,7 @@ class MemoryMatchGame{
       this.stats.matches++;
       this.stats.attempts++;
     } else {
-      this.hideCardsInTime( 200 );
+      this.hideCardsInTime( 500 );
       this.stats.attempts++;
       pointCounter -= 1000;
       $(".lifepoints").text(pointCounter);
@@ -179,11 +182,14 @@ class MMCard{
   }
   reveal(){
     this.isRevealed = true;
-    this.domElements.front.hide();
+    // this.domElements.front.hide();
+
+    this.domElements.container.addClass('flipped');
   }
   hide(){
     this.isRevealed = false;
-    this.domElements.front.show();
+    // this.domElements.front.show();
+    this.domElements.container.removeClass('flipped');
   }
   render(){
     this.domElements.container = $("<div>",{
