@@ -212,5 +212,10 @@ img{
 .back {
   transform: rotateY(180deg);
 }
-
+.attemptValue,
+.accuracyValue,
+.matchValue,
+.gamesValue {
+  display: inline;
+}
 /*card back dimensions are 262 x 377 aka 1.43

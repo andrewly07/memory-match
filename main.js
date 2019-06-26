@@ -32,12 +32,9 @@ function initializeApp(){
   game = new MemoryMatchGame(cardImages);
   game.shuffle();
   game.createCards();
+  game.showLifePoints();
+  game.display_stats();
 
-
-  showLifePoints();
-  // reset_stats();
-  display_stats();
-  // resetButton();
 }
 
 class MemoryMatchGame{
@@ -56,17 +53,24 @@ class MemoryMatchGame{
     };
     this.addEventHandlers();
     this.resetGame = this.resetGame.bind(this);
+    this.display_stats = this.display_stats.bind(this);
+    this.showLifePoints = this.showLifePoints.bind(this);
+    this.showWinModal = this.showWinModal.bind(this);
+    this.showLoseModal = this.showLoseModal.bind(this);
   }
 
   addEventHandlers(){
     $('#playButton').click(this.handlePlayButton);
     this.handlePlayButton();
     $("#playButton").click(this.playSound);
+    
   }
-
+  showLifePoints(){
+      $(".lifepoints").text(pointCounter);
+  }
   playSound() {
     var player = new Audio('sounds/yugiohthemesong.mp3');
-    player.volume = .5;
+    player.volume = .3;
     player.play();
   }
   lifepointSound(){
@@ -113,7 +117,7 @@ class MemoryMatchGame{
     }
     if(this.stats.matches === total_possible_matches){
       console.log('You have won!');
-      showWinModal();
+      this.showWinModal();
     } 
   }
   checkForMatch(){
@@ -122,6 +126,7 @@ class MemoryMatchGame{
       this.clickedCards = [];
       this.stats.matches++;
       this.stats.attempts++;
+      this.display_stats();
     } else {
       this.hideCardsInTime( 500 );
       this.stats.attempts++;
@@ -129,12 +134,14 @@ class MemoryMatchGame{
       $(".lifepoints").text(pointCounter);
       this.lifepointSound();
       this.lifepointAnimate();
+      this.display_stats();
+
 
       
     }
     if(pointCounter === 0){
       console.log('you have been mind crushed');
-      showLoseModal();
+      this.showLoseModal();
     }
   }
   hideCardsInTime( timeToWait ){
@@ -156,15 +163,20 @@ class MemoryMatchGame{
     this.stats.display_stats();
   }
   display_stats(){
- 
-    $('.attempts .value').text(this.stats.attempts);
-    $('.accuracy .value').text(this.stats.accuracy);
-    $('.gamesplayed .value').text(this.stats.games_played);
-    $('.matches .value').text(this.stats.matches);
+  $('.attemptValue').text(this.stats.attempts);
+  $('.accuracyValue').text(this.stats.accuracy +'%');
+  $('.gamesValue').text(this.stats.games_played);
+  $('.matchValue').text(this.stats.matches)
   
   }
-
-  
+  showWinModal(){
+    $('.winner').removeClass('hide').show('winnerModal');
+    $('.winner').modal('hide');
+  }
+  showLoseModal(){
+    $('.loser').removeClass('hide').show('loserModal');
+    $('.loser').modal('hide');
+ }
 }
 
 class MMCard{
@@ -224,28 +236,28 @@ class MMCard{
 
 }
 
-function showLifePoints(){
-  $(".lifepoints").text(pointCounter);
-}
+// function showLifePoints(){
+//   $(".lifepoints").text(pointCounter);
+// }
 
 
-function display_stats(){
+// function display_stats(){
  
-  $('.attempts .value').text(this.stats.attempts);
-  $('.accuracy .value').text(this.stats.accuracy);
-  $('.gamesplayed .value').text(this.stats.games_played);
-  $('.matches .value').text(this.stats.matches);
+//   $('.attempts .attemptValue').text(this.stats.attempts);
+//   $('.accuracyValue').text(this.stats.accuracy);
+//   $('.gamesValue').text(this.stats.games_played);
+//   $('.matchesValue').text(this.stats.matches);
 
-}
+// }
 
-function showWinModal(){
-  $('.winner').removeClass('hide').show('winnerModal');
-  $('.winner').modal('hide');
+// function showWinModal(){
+//   $('.winner').removeClass('hide').show('winnerModal');
+//   $('.winner').modal('hide');
   
- }
- function showLoseModal(){
-  $('.loser').removeClass('hide').show('loserModal');
-   $('.loser').modal('hide');
- }
+//  }
+//  function showLoseModal(){
+//   $('.loser').removeClass('hide').show('loserModal');
+//    $('.loser').modal('hide');
+//  }
 
 
