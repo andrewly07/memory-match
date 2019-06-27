@@ -91,19 +91,15 @@ img{
   perspective: 1500px;
 }
 
-.attempts{
-    position: center;
-    color: white;
-}
-.accuracy{
-    position: relative;
-    color: white;
-}
+.attempts,
+.accuracy,
 .matches,
-.gamesplayed {
-  color: white;
-}
+.gamesplayed{
+    position: relative;
+    color: whitesmoke;
+    text-shadow: 3px 3px 4px #000000;
 
+}
 .lifepoints{
     background-image: url('images/lifepointspanel.png');
     background-size: contain;
@@ -217,5 +213,14 @@ img{
 .matchValue,
 .gamesValue {
   display: inline;
+  text-shadow: 3px 3px 4px #000000;
+
+}
+.aboutButton,
+.resetButton{
+  box-shadow: 3px 3px 4px #000000;
+  color: whitesmoke;
+  font-weight: 500;
+
 }
 /*card back dimensions are 262 x 377 aka 1.43

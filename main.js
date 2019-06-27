@@ -51,18 +51,20 @@ class MemoryMatchGame{
       accuracy: 0,
       games_played: 0
     };
-    this.addEventHandlers();
     this.resetGame = this.resetGame.bind(this);
     this.display_stats = this.display_stats.bind(this);
     this.showLifePoints = this.showLifePoints.bind(this);
     this.showWinModal = this.showWinModal.bind(this);
     this.showLoseModal = this.showLoseModal.bind(this);
+    this.addEventHandlers();
+
   }
 
   addEventHandlers(){
     $('#playButton').click(this.handlePlayButton);
     this.handlePlayButton();
     $("#playButton").click(this.playSound);
+    $("#resetButton").click(this.resetGame);
     
   }
   showLifePoints(){
@@ -157,16 +159,22 @@ class MemoryMatchGame{
     $('.front').show();
     $('.lifepoints').text(pointCounter);
     this.stats.games_played++;
+    console.log('sup', this.stats.games_played)
     this.stats.matches = 0;
     this.stats.attempts = 0;
     this.stats.accuracy = 0;
-    this.stats.display_stats();
+    this.display_stats();
   }
   display_stats(){
+    if(this.stats.attempts === 0){
+      this.stats.accuracy === 0
+    }else{
+      this.stats.accuracy = Math.floor(this.stats.matches / this.stats.attempts * 100)
+    };
   $('.attemptValue').text(this.stats.attempts);
   $('.accuracyValue').text(this.stats.accuracy +'%');
   $('.gamesValue').text(this.stats.games_played);
-  $('.matchValue').text(this.stats.matches)
+  $('.matchValue').text(this.stats.matches);
   
   }
   showWinModal(){
@@ -261,3 +269,4 @@ class MMCard{
 //  }
 
 
+//number of matches divide attempts times 100 and then Math.floor it.;
