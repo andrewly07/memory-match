@@ -5,16 +5,19 @@ body {
     border: goldenrod;   
     height: 100vh;
     width: 100vw; 
+    overflow: hidden;
 }
 
 .logo{
 
     background-image: url('images/YamiYugi.png');
-    width: 100vw;
+    width: 250px;
     max-width: 250px;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
+    bottom: 47%;
+    left: 2%
 }
 
 .header{  
@@ -78,11 +81,10 @@ img{
 }
 .statsmenu{
     color: white;
-    height: 20px;
-    width: 30px;
     position: relative;
     display: inline-block;
-    left: 50%;
+    left: 55%;
+    bottom: 24%
 
 }
 .column {

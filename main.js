@@ -21,7 +21,7 @@ var cardImages = [
   'images/obelisk.png',
   'images/ra.png',
   'images/timewizard.png',
-  'images/flameswordsman.png'
+  'images/mermaid.png'
   
 ];
 $(document).ready( initializeApp);
@@ -57,7 +57,6 @@ class MemoryMatchGame{
     this.showWinModal = this.showWinModal.bind(this);
     this.showLoseModal = this.showLoseModal.bind(this);
     this.addEventHandlers();
-
   }
 
   addEventHandlers(){
@@ -159,7 +158,6 @@ class MemoryMatchGame{
     $('.front').show();
     $('.lifepoints').text(pointCounter);
     this.stats.games_played++;
-    console.log('sup', this.stats.games_played)
     this.stats.matches = 0;
     this.stats.attempts = 0;
     this.stats.accuracy = 0;
@@ -179,11 +177,11 @@ class MemoryMatchGame{
   }
   showWinModal(){
     $('.winner').removeClass('hide').show('winnerModal');
-    $('.winner').modal('hide');
+    // $('.winner').modal('hide');
   }
   showLoseModal(){
     $('.loser').removeClass('hide').show('loserModal');
-    $('.loser').modal('hide');
+    // $('.loser').modal('hide');
  }
 }
 
@@ -243,30 +241,6 @@ class MMCard{
   }
 
 }
-
-// function showLifePoints(){
-//   $(".lifepoints").text(pointCounter);
-// }
-
-
-// function display_stats(){
- 
-//   $('.attempts .attemptValue').text(this.stats.attempts);
-//   $('.accuracyValue').text(this.stats.accuracy);
-//   $('.gamesValue').text(this.stats.games_played);
-//   $('.matchesValue').text(this.stats.matches);
-
-// }
-
-// function showWinModal(){
-//   $('.winner').removeClass('hide').show('winnerModal');
-//   $('.winner').modal('hide');
-  
-//  }
-//  function showLoseModal(){
-//   $('.loser').removeClass('hide').show('loserModal');
-//    $('.loser').modal('hide');
-//  }
 
 
 //number of matches divide attempts times 100 and then Math.floor it.;
