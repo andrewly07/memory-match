@@ -42,9 +42,13 @@ body {
 }
 
 .introPage{  
-  width: 100%;
-  position: relative;
-
+  /* width: 100%;
+  position: relative; */
+  background: url('images/introcover.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   
 }
 
@@ -177,6 +181,7 @@ img{
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   overflow: auto;
+  z-index: 2;
 }
 
 .loser{
@@ -186,9 +191,9 @@ img{
   display: none;
 }
 
-.hide{
+/* .hide{
   display: none;
-}
+} */
 @media(min-width: 920px){
   .column {
     width: calc(100% / 9);
@@ -225,4 +230,20 @@ img{
   font-weight: 500;
 
 }
+.modal-backdrop {
+  z-index: 1;
+}
+/* @media(min-width: 425px){
+  .column {
+    width: calc(100% / 9);
+  }
+  .logo {
+    margin-left: 36%;
+  }
+} */
+
+
 /*card back dimensions are 262 x 377 aka 1.43
+
+/slice this.images into another variable in the shuffle method
+/save og one into constructor this.og.images

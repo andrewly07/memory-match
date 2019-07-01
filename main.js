@@ -56,6 +56,7 @@ class MemoryMatchGame{
     this.showLifePoints = this.showLifePoints.bind(this);
     this.showWinModal = this.showWinModal.bind(this);
     this.showLoseModal = this.showLoseModal.bind(this);
+    this.shuffle = this.shuffle.bind(this);
     this.addEventHandlers();
   }
 
@@ -64,6 +65,7 @@ class MemoryMatchGame{
     this.handlePlayButton();
     $("#playButton").click(this.playSound);
     $("#resetButton").click(this.resetGame);
+    $("#modalResetButton").click(this.resetGame);
     
   }
   showLifePoints(){
@@ -161,6 +163,8 @@ class MemoryMatchGame{
     this.stats.matches = 0;
     this.stats.attempts = 0;
     this.stats.accuracy = 0;
+    this.shuffle();
+    
     this.display_stats();
   }
   display_stats(){
@@ -176,12 +180,12 @@ class MemoryMatchGame{
   
   }
   showWinModal(){
-    $('.winner').removeClass('hide').show('winnerModal');
-    // $('.winner').modal('hide');
+    // $('.winner').removeClass('hide').show('winnerModal');
+    $('#winnerModal').modal('show');
   }
   showLoseModal(){
-    $('.loser').removeClass('hide').show('loserModal');
-    // $('.loser').modal('hide');
+    // $('.loser').removeClass('hide').show('loserModal');
+    $('#loserModal').modal('show');
  }
 }
 
