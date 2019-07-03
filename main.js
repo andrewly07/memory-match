@@ -101,10 +101,12 @@ class MemoryMatchGame{
     }
   }
   shuffle(){
-    while(this.images.length){
-      var randomIndex = Math.floor(Math.random() * this.images.length)
-      this.newArray.push(this.images[randomIndex]);
-      this.images.splice(randomIndex, 1)
+    this.newArray = [];
+    var imagesToShuffle = this.images.slice(0);
+    while(imagesToShuffle.length){
+      var randomIndex = Math.floor(Math.random() * imagesToShuffle.length)
+      this.newArray.push(imagesToShuffle[randomIndex]);
+      imagesToShuffle.splice(randomIndex, 1)
     }
     return this.newArray;
   }
@@ -157,14 +159,15 @@ class MemoryMatchGame{
   }
   resetGame(){
     pointCounter = 8000;
-    $('.front').show();
+    $('.card').removeClass('flipped');
     $('.lifepoints').text(pointCounter);
     this.stats.games_played++;
     this.stats.matches = 0;
     this.stats.attempts = 0;
     this.stats.accuracy = 0;
+    $('.cardContainer').empty();
     this.shuffle();
-    
+    this.createCards();
     this.display_stats();
   }
   display_stats(){
@@ -180,11 +183,9 @@ class MemoryMatchGame{
   
   }
   showWinModal(){
-    // $('.winner').removeClass('hide').show('winnerModal');
     $('#winnerModal').modal('show');
   }
   showLoseModal(){
-    // $('.loser').removeClass('hide').show('loserModal');
     $('#loserModal').modal('show');
  }
 }
@@ -214,13 +215,10 @@ class MMCard{
   }
   reveal(){
     this.isRevealed = true;
-    // this.domElements.front.hide();
-
     this.domElements.container.addClass('flipped');
   }
   hide(){
     this.isRevealed = false;
-    // this.domElements.front.show();
     this.domElements.container.removeClass('flipped');
   }
   render(){

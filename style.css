@@ -191,14 +191,6 @@ img{
   display: none;
 }
 
-/* .hide{
-  display: none;
-} */
-@media(min-width: 920px){
-  .column {
-    width: calc(100% / 9);
-  }
-}
 
 .flipped{
   transform: rotateY(180deg);
@@ -233,6 +225,13 @@ img{
 .modal-backdrop {
   z-index: 1;
 }
+
+@media(min-width: 920px){
+  .column {
+    width: calc(100% / 9);
+  }
+}
+
 /* @media(min-width: 425px){
   .column {
     width: calc(100% / 9);
