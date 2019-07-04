@@ -21,7 +21,7 @@ var cardImages = [
   'images/obelisk.png',
   'images/ra.png',
   'images/timewizard.png',
-  'images/mermaid.png'
+  'images/celtic.png'
   
 ];
 $(document).ready( initializeApp);
@@ -101,16 +101,16 @@ class MemoryMatchGame{
     }
   }
   shuffle(){
-    while(this.images.length){
-      var randomIndex = Math.floor(Math.random() * this.images.length)
-      this.newArray.push(this.images[randomIndex]);
-      this.images.splice(randomIndex, 1)
+    this.newArray = [];
+    var imagesToShuffle = this.images.slice(0);
+    while(imagesToShuffle.length){
+      var randomIndex = Math.floor(Math.random() * imagesToShuffle.length)
+      this.newArray.push(imagesToShuffle[randomIndex]);
+      imagesToShuffle.splice(randomIndex, 1)
     }
     return this.newArray;
   }
   handleChildClick( childObject ){
-    console.log(childObject , " was clicked");
-    console.log('parent receiving child click');
     if(this.clickedCards.length < 2){
       this.clickedCards.push( childObject )
       childObject.reveal();
@@ -119,7 +119,6 @@ class MemoryMatchGame{
       this.checkForMatch();
     }
     if(this.stats.matches === total_possible_matches){
-      console.log('You have won!');
       this.showWinModal();
     } 
   }
@@ -138,12 +137,8 @@ class MemoryMatchGame{
       this.lifepointSound();
       this.lifepointAnimate();
       this.display_stats();
-
-
-      
     }
     if(pointCounter === 0){
-      console.log('you have been mind crushed');
       this.showLoseModal();
     }
   }
@@ -157,14 +152,15 @@ class MemoryMatchGame{
   }
   resetGame(){
     pointCounter = 8000;
-    $('.front').show();
+    $('.card').removeClass('flipped');
     $('.lifepoints').text(pointCounter);
     this.stats.games_played++;
     this.stats.matches = 0;
     this.stats.attempts = 0;
     this.stats.accuracy = 0;
+    $('.cardContainer').empty();
     this.shuffle();
-    
+    this.createCards();
     this.display_stats();
   }
   display_stats(){
@@ -180,11 +176,9 @@ class MemoryMatchGame{
   
   }
   showWinModal(){
-    // $('.winner').removeClass('hide').show('winnerModal');
     $('#winnerModal').modal('show');
   }
   showLoseModal(){
-    // $('.loser').removeClass('hide').show('loserModal');
     $('#loserModal').modal('show');
  }
 }
@@ -203,7 +197,6 @@ class MMCard{
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(){
-    console.log('child called');
     if(this.isRevealed === true){
       return;
     }
@@ -214,13 +207,10 @@ class MMCard{
   }
   reveal(){
     this.isRevealed = true;
-    // this.domElements.front.hide();
-
     this.domElements.container.addClass('flipped');
   }
   hide(){
     this.isRevealed = false;
-    // this.domElements.front.show();
     this.domElements.container.removeClass('flipped');
   }
   render(){
