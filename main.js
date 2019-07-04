@@ -21,7 +21,7 @@ var cardImages = [
   'images/obelisk.png',
   'images/ra.png',
   'images/timewizard.png',
-  'images/mermaid.png'
+  'images/celtic.png'
   
 ];
 $(document).ready( initializeApp);
@@ -111,8 +111,6 @@ class MemoryMatchGame{
     return this.newArray;
   }
   handleChildClick( childObject ){
-    console.log(childObject , " was clicked");
-    console.log('parent receiving child click');
     if(this.clickedCards.length < 2){
       this.clickedCards.push( childObject )
       childObject.reveal();
@@ -121,7 +119,6 @@ class MemoryMatchGame{
       this.checkForMatch();
     }
     if(this.stats.matches === total_possible_matches){
-      console.log('You have won!');
       this.showWinModal();
     } 
   }
@@ -140,12 +137,8 @@ class MemoryMatchGame{
       this.lifepointSound();
       this.lifepointAnimate();
       this.display_stats();
-
-
-      
     }
     if(pointCounter === 0){
-      console.log('you have been mind crushed');
       this.showLoseModal();
     }
   }
@@ -204,7 +197,6 @@ class MMCard{
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(){
-    console.log('child called');
     if(this.isRevealed === true){
       return;
     }
