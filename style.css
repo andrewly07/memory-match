@@ -16,8 +16,9 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
-    bottom: 47%;
-    left: 2%
+    bottom: 50%;
+    left: 9%;
+    height: -webkit-fill-available;
 }
 
 .header{  
@@ -53,8 +54,10 @@ body {
 }
 
 img{
-   width: 100%;
-   height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
  }
 
 .boardContainer {
@@ -65,7 +68,7 @@ img{
 #playButton{
   font-size: 5vh;
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 40%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -115,7 +118,7 @@ img{
     text-shadow: 2px 2px 4px #000000;
     text-align: inherit;
     margin-bottom: 15%;
-    margin-left: 41%;
+    margin-left: 30%;
     padding-top: 20%;
     padding-left: 10%;
 
@@ -221,6 +224,7 @@ img{
   color: whitesmoke;
   font-weight: 500;
 
+
 }
 .modal-backdrop {
   z-index: 1;
@@ -232,6 +236,182 @@ img{
   }
 }
 
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    
+      .logo{
+        background-image: url('images/YamiYugi.png');
+        width: 244px;
+        max-width: 250px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        bottom: 20%;
+        left: 4%;
+        /* height: -webkit-fill-available; */
+      }
+
+      
+    
+    .column {
+      width: calc(100% / 6);
+    }
+    .statsmenu{
+      color: white;
+      position: relative;
+      display: inline-block;
+      left: 42%;
+      top: 16%;
+  }
+  .lifepoints{
+    background-image: url('images/lifepointspanel.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 103px;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: inherit;
+    margin-bottom: 15%;
+    margin-left: 45%;
+    padding-top: 20%;
+    padding-left: 10%;
+}
+
+    
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* iphone 6, 7, 8 */
+
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .column {
+      width: calc(100% / 6);
+    }
+    .lifepoints{
+      margin-left: 50%;
+      /* height: 76px; */
+      background-size: contain;
+      background-repeat: no-repeat;
+      color: whitesmoke;
+      text-shadow: 2px 2px 4px #000000;
+      text-align: inherit;
+      /* margin-bottom: 15%; */
+      margin-left: 82%;
+      padding-top: 20%;
+      padding-left: 8%;
+      font-size: 15px;
+      display: inline-block;
+      width: 136px;
+      height: 56px;
+    }
+
+    
+    .logo{
+      width: 100px;
+      bottom: 31%;
+      left: 0;
+      height: -webkit-fill-available;
+
+    }
+    .statsmenu{
+      top: 33px;
+      left: 191px;
+    }
+    .label{
+      font-size: 60%;
+    }
+    .back, .front{
+      height: 50%;
+      width: 50%;
+    }
+    .aboutButton,
+    .resetButton{
+    box-shadow: 3px 3px 4px #000000;
+    color: whitesmoke;
+    font-weight: 500;
+    width: 44px;
+    font-size: 7px;
+    }
+    .card{
+      margin: -55px;
+      text-align: center;
+      margin-top: auto;
+      margin-right: auto;
+    };
+}
+
+/* @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .column {
+      width: calc(100% / 9);
+    }
+    .lifepoints{
+      margin-left: 50%;
+      height: 76px;
+    }
+    .logo{
+      width: 123px;
+      bottom: 8%;
+      left: 0;
+    }
+    .statsmenu{
+      top: 33px;
+      left: 147px;
+    }
+    .label{
+      font-size: 60%;
+    }
+    .back, .front{
+      height: 50%;
+      width: 50%;
+    }
+} */
+
+
+/* Portrait */
+/* @media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+} */
+
+/* Landscape */
+/* @media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+  } */
 /* @media(min-width: 425px){
   .column {
     width: calc(100% / 9);
