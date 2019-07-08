@@ -42,17 +42,19 @@ body {
   
 }
 
-.introPage{  
+.introPage{
   /* width: 100%;
   position: relative; */
-  background: url('images/introcover.jpg') no-repeat center center fixed; 
+  background: url('images/introcover.jpg') no-repeat right fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
-
 img{
   min-width: 100%;
   min-height: 100%;
