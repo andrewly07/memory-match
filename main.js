@@ -75,6 +75,7 @@ class MemoryMatchGame{
     var player = new Audio('sounds/yugiohthemesong.mp3');
     player.volume = .3;
     player.play();
+    player.loop = true;
   }
   lifepointSound(){
     var lifeSound = new Audio('sounds/lifepointcounter.mp3');
