@@ -368,6 +368,63 @@ img{
     };
 }
 
+@media (orientation: portrait) {
+  img{
+    min-width: 50%;
+  }
+  .overlay{
+    background: black;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+  }
+  .overlayContainer{
+    top: 10%;
+    left: 10%;
+    margin-top: 40%;
+
+    
+  }
+  .overlayPicture{
+    height: 10%;
+    width: 10%;
+  }
+   }
+
+
+   /* @media (orientation: portrait) {
+    .overlay{
+        display: flex;
+        background: black;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 100;
+    
+    }
+    .overlay-content{
+        color: #fff;
+        text-align: center;
+        font-size: 60px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    }
+
+ */
+
+
+
+
 /* @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
