@@ -1,76 +1,89 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Memory Match</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Yu-Gi-Oh! Memory Match</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="controller.js"></script>
-        <script src="yugioh.js" type="text/javascript"></script>
-        <link href="about.html" type="text/html">
-        <link rel="stylesheet" type="text/css" href="cardstyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="main.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" type="image/png" href="/images/ygorgfavicon.png">
 
     </head>
     <body>
-      <div class="introPage">
-        <img src="yugiohpictures/introcover.jpg" alt="intro pic">
+      <div class="introPage hide">
         <button id="playButton" class="btn-danger lg" type="button">START</button>
       </div>
       <div class="mainContainer hide">
         <div class="header">
           <div class="logo">
-            <div class="lifepoints"></div>   
+            <div class="lifepoints"><div class="lifepointsFlash"></div></div>   
           </div>
-          <button type="text" id="aboutButton" class="btn-warning" onclick="location.href='https://www.yugioh.com/'">About</button>
-          <button type="button" id="resetButton" class="btn-danger" value="Refresh Page" onclick="game.resetGame()">Reset</button>
-              <div class="statsmenu">
+        
+            <div class="statsmenu">
               <div class="attempts">
-                <span class="label">Attempts:</span><span class="value"></span>
+                <div class="label">ATTEMPTS:</div><div class="attemptValue"></div>
               </div>   
               <div class="accuracy">
-                <span class="label">Accuracy:</span><span class="value"></span>
+                <div class="label">ACCURACY:</div><div class="accuracyValue"></div>
               </div>
               <div class="matches">
-                <span class="label">Matches:</span><span class="value"></span>
+                <div class="label">MATCHES:</div><div class="matchValue"></div>
               </div>
               <div class="gamesplayed">
-                <span class="label">Games Played:</span><span class="value"></span>
+                <div class="label">GAMES PLAYED:</div><div class="gamesValue"></div>
               </div> 
+              <div class="buttonContainer">
+                  <a type="button" id="resetButton" class="btn btn-danger resetButton" value="Refresh Page">RESET</a>
+                <a type="text" id="aboutButton" class="btn btn-warning aboutButton" href="https://www.andrewly.dev/" target="_blank">ABOUT</a>
+               
+              </div>
           </div>
+         
         </div>
+        <div class="boardContainer">
         <div class="cardContainer">
         </div>
       </div>
-             <div id="loserModal" class="modal-content loser hide">
+      </div>
+             <div id="loserModal" class="modal-content loser">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" aria-label="close">
-                &times;
-              </button>
-              <h4 class="modal-title">I Lost...NOOOOOO!</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="close"> 
+                <span aria-hidden="true">&times;</span>
+        </button>
+              <h4 class="modal-title">"I-I LOST!?...NOOOOOO!"</h4>
             </div>
             <div class="modal-body2">
               <img src="https://media.giphy.com/media/K7NHFtsLG4nqU/giphy.gif" alt="kaiba losing"/>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-warning btn-block" data-dismiss="modal" onclick="window.location.reload()">YOU LOST!</button> 
+              <a id="modalResetButton" type="button" class="btn btn-danger btn-block" data-dismiss="modal">Rematch?</a> 
             </div>
           </div> 
 
-      <div id="winnerModal" class="modal-content winner hide">
+      <div id="winnerModal" class="modal-content winner">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              &times;
+              <button type="button" class="close" data-dismiss="modal" aria-label="close"> 
+                  <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title">HEART OF THE CARDS!</h4>
+            <h4 class="modal-title">YOU HAVE THE HEART OF THE CARDS!</h4>
           </div>
           <div class="modal-body2">
             <img src="https://media.giphy.com/media/Snd51fjjX6s0M/giphy.gif" alt="yugi draws exodia"/>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-warning btn-block" data-dismiss="modal" onclick="window.location.reload()">YOU'VE WON!</button> 
+            <button id="modalResetButton" type="button" class="btn btn-danger btn-block" data-dismiss="modal">Play Again?</button> 
           </div>
-        </div>                
+        </div>          
+        <div class="overlay">
+            <div class="overlayContainer">
+            <img class="overlayPicture" src="images/landscape-mode.gif">
+            </div>
+            <h3>For Best Experience, Change To Landscape Mode</h3>
+          </div>
+            
     </body>
+  
 </html>
 

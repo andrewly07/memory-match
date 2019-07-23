@@ -1,0 +1,487 @@
+body {  
+    background-image: url('images/duelbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    border: goldenrod;   
+    height: 100vh;
+    width: 100vw; 
+    overflow: hidden;
+}
+
+.logo{
+
+    background-image: url('images/YamiYugi.png');
+    width: 250px;
+    max-width: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 50%;
+    left: 9%;
+    height: -webkit-fill-available;
+}
+
+.header{  
+    height: 22%;
+    background-image: url('images/yugiohlogo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-color: rgba(22, 22, 36, 0.5);
+    padding-top: 2%;
+    position: static;  
+}
+
+.label{
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.header > * {
+  display:inline-block
+  
+}
+
+.introPage{
+  /* width: 100%;
+  position: relative; */
+  background: url('images/introcover.jpg') no-repeat right fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+img{
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+ }
+
+.boardContainer {
+  margin-top: 20px;
+  height: 70%;
+}
+
+#playButton{
+  font-size: 5vh;
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgb(173, 10, 10);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+
+}
+.mainContainer{
+    height: 100vh;
+    width: 100vw;
+    background-size: 10vw; 
+    
+}
+.statsmenu{
+    color: white;
+    position: relative;
+    display: inline-block;
+    left: 55%;
+    bottom: 24%
+
+}
+.column {
+  width: calc(100% / 3);
+  background-color: transparent;
+  perspective: 1500px;
+}
+
+.attempts,
+.accuracy,
+.matches,
+.gamesplayed{
+    position: relative;
+    color: whitesmoke;
+    text-shadow: 3px 3px 4px #000000;
+
+}
+.lifepoints{
+    background-image: url('images/lifepointspanel.png');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    height: 100px;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: inherit;
+    margin-bottom: 15%;
+    margin-left: 30%;
+    padding-top: 20%;
+    padding-left: 10%;
+
+}
+
+ .cardContainer{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  } 
+
+.card{
+  position: relative;
+  height: calc(120px * 1.43);
+  width: 120px;
+  background-color: transparent;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto 20px; 
+} 
+
+
+.front, .back{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #000000;  
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    
+  }
+  .front{
+    animation-name: glow;
+    animation-duration: 3s; 
+    animation-iteration-count: infinite;
+   
+  }
+  @keyframes glow {
+    to{
+        box-shadow: 0px 0px 30px 20px rgb(237, 152, 83);
+    }
+  }
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 6px;
+  }
+
+
+.modal-content {
+  background-color: goldenrod;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  overflow: auto;
+  z-index: 2;
+}
+
+.loser{
+  display: none;
+} 
+.winner {
+  display: none;
+}
+
+
+.flipped{
+  transform: rotateY(180deg);
+}
+
+.back, .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+
+.back {
+  transform: rotateY(180deg);
+}
+.attemptValue,
+.accuracyValue,
+.matchValue,
+.gamesValue {
+  display: inline;
+  text-shadow: 3px 3px 4px #000000;
+
+}
+.aboutButton,
+.resetButton{
+  box-shadow: 3px 3px 4px #000000;
+  color: whitesmoke;
+  font-weight: 500;
+
+
+}
+.modal-backdrop {
+  z-index: 1;
+}
+
+@media(min-width: 920px){
+  .column {
+    width: calc(100% / 9);
+  }
+}
+
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    
+      .logo{
+        background-image: url('images/YamiYugi.png');
+        width: 244px;
+        max-width: 250px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        bottom: 20%;
+        left: 4%;
+        /* height: -webkit-fill-available; */
+      }
+
+      
+    
+    .column {
+      width: calc(100% / 6);
+    }
+    .statsmenu{
+      color: white;
+      position: relative;
+      display: inline-block;
+      left: 42%;
+      top: 16%;
+  }
+  .lifepoints{
+    background-image: url('images/lifepointspanel.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 103px;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: inherit;
+    margin-bottom: 15%;
+    margin-left: 45%;
+    padding-top: 20%;
+    padding-left: 10%;
+}
+
+    
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* iphone 6, 7, 8 */
+
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .column {
+      width: calc(100% / 6);
+    }
+    .lifepoints{
+      margin-left: 50%;
+      /* height: 76px; */
+      background-size: contain;
+      background-repeat: no-repeat;
+      color: whitesmoke;
+      text-shadow: 2px 2px 4px #000000;
+      text-align: inherit;
+      /* margin-bottom: 15%; */
+      margin-left: 82%;
+      padding-top: 20%;
+      padding-left: 8%;
+      font-size: 15px;
+      display: inline-block;
+      width: 136px;
+      height: 56px;
+    }
+
+    
+    .logo{
+      width: 100px;
+      bottom: 31%;
+      left: 0;
+      height: -webkit-fill-available;
+
+    }
+    .statsmenu{
+      top: 33px;
+      left: 191px;
+    }
+    .label{
+      font-size: 60%;
+    }
+    .back, .front{
+      height: 50%;
+      width: 50%;
+    }
+    .aboutButton,
+    .resetButton{
+    box-shadow: 3px 3px 4px #000000;
+    color: whitesmoke;
+    font-weight: 500;
+    width: 44px;
+    font-size: 7px;
+    }
+    .card{
+      margin: -55px;
+      text-align: center;
+      margin-top: auto;
+      margin-right: auto;
+    };
+}
+
+@media (orientation: portrait) {
+  img{
+    min-width: 50%;
+  }
+  .overlay{
+    background: black;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+  }
+  .overlayContainer{
+    top: 10%;
+    left: 10%;
+    margin-top: 40%;
+
+    
+  }
+  .overlayPicture{
+    height: 10%;
+    width: 10%;
+  }
+   }
+
+
+   /* @media (orientation: portrait) {
+    .overlay{
+        display: flex;
+        background: black;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 100;
+    
+    }
+    .overlay-content{
+        color: #fff;
+        text-align: center;
+        font-size: 60px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    }
+
+ */
+
+
+
+
+/* @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .column {
+      width: calc(100% / 9);
+    }
+    .lifepoints{
+      margin-left: 50%;
+      height: 76px;
+    }
+    .logo{
+      width: 123px;
+      bottom: 8%;
+      left: 0;
+    }
+    .statsmenu{
+      top: 33px;
+      left: 147px;
+    }
+    .label{
+      font-size: 60%;
+    }
+    .back, .front{
+      height: 50%;
+      width: 50%;
+    }
+} */
+
+
+/* Portrait */
+/* @media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+} */
+
+/* Landscape */
+/* @media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+  } */
+/* @media(min-width: 425px){
+  .column {
+    width: calc(100% / 9);
+  }
+  .logo {
+    margin-left: 36%;
+  }
+} */
+
+
+/*card back dimensions are 262 x 377 aka 1.43
+
+/slice this.images into another variable in the shuffle method
+/save og one into constructor this.og.images
