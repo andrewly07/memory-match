@@ -238,7 +238,7 @@ img{
   }
 }
 
-
+/* ------------------------Media Queries--------------------------- */
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 
 /* Portrait and Landscape */
@@ -254,7 +254,7 @@ img{
         background-size: contain;
         background-repeat: no-repeat;
         position: relative;
-        bottom: 20%;
+        bottom: 27%;
         left: 4%;
         /* height: -webkit-fill-available; */
       }
@@ -268,8 +268,8 @@ img{
       color: white;
       position: relative;
       display: inline-block;
-      left: 42%;
-      top: 16%;
+      left: 49%;
+      top: 6%;
   }
   .lifepoints{
     background-image: url('images/lifepointspanel.png');
@@ -313,7 +313,7 @@ img{
   and (max-device-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
     .column {
-      width: calc(100% / 6);
+      width: calc(100% / 9);
     }
     .lifepoints{
       margin-left: 50%;

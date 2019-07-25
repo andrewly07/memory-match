@@ -125,7 +125,6 @@ class MemoryMatchGame{
   }
   checkForMatch(){
     if(this.clickedCards[0].getValue() === this.clickedCards[1].getValue()){
-      console.log('match!');
       this.clickedCards = [];
       this.stats.matches++;
       this.stats.attempts++;
