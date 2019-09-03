@@ -11,7 +11,7 @@ Once the player has match 2 cards they will be displayed face up until all pairs
 
 Once all pairs have been matched the user will be displayed a message that they have won the game. 
 
-As the user clicks through the cards stats will be kept letting the user know how many attempts and theaccuracy of their choices.
+As the user clicks through the cards stats will be kept letting the user know how many attempts and the accuracy of their choices.
 
 ## Getting Started
 ### Installing
@@ -33,9 +33,9 @@ $ git clone https://github.com/[user_name]/memory-match.git
 
 * [JavaScript](https://www.ecma-international.org/publications/standards/Ecma-262.htm) - The web framework used
 * [jQuery](https://jquery.com/) - The JavaScript library used
-* [HTML]- Used to generate markup
-* [CSS] - Used for styling
-* [Object-Oriented Programming] - Used to as programming paradigm
+* HTML- Used to generate markup
+* CSS - Used for styling
+* Object-Oriented Programming - Used to as programming paradigm
 
 ## License
 
