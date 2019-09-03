@@ -1,12 +1,17 @@
 # Memory Match (A YU-GI-OH! Themed Game)
 
+* Live Demo: [https://memory-match.andrewly.dev](https://memory-match.andrewly.dev)
+
 ## Overview
+
 
 The object of Memory Match is to try match all 9 pairs of matching cards before their lifepoints get depleted.
 
-Once the player has match 2 cards they will be displayed face up until all pairs have been matched. Once all pairs have been matched the user will be
-displayed a message that they have won the game. As the user clicks through the cards stats will be kept letting the user know how many attempts and the
-accuracy of their choices.
+Once the player has match 2 cards they will be displayed face up until all pairs have been matched. 
+
+Once all pairs have been matched the user will be displayed a message that they have won the game. 
+
+As the user clicks through the cards stats will be kept letting the user know how many attempts and theaccuracy of their choices.
 
 ## Getting Started
 ### Installing
