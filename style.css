@@ -311,23 +311,23 @@ img{
 @media only screen 
   and (min-device-width: 414px) 
   and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    body{
+      font-size: 8px;
+    }
     .column {
       width: calc(100% / 9);
     }
     .lifepoints{
       margin-left: 50%;
-      /* height: 76px; */
       background-size: contain;
       background-repeat: no-repeat;
       color: whitesmoke;
       text-shadow: 2px 2px 4px #000000;
       text-align: inherit;
-      /* margin-bottom: 15%; */
       margin-left: 82%;
       padding-top: 20%;
-      padding-left: 8%;
-      font-size: 15px;
+      font-size: 11px;
       display: inline-block;
       width: 136px;
       height: 56px;
@@ -337,13 +337,12 @@ img{
     .logo{
       width: 100px;
       bottom: 31%;
-      left: 0;
       height: -webkit-fill-available;
 
     }
     .statsmenu{
-      top: 33px;
-      left: 191px;
+      top: -13px;
+      left: 400px;
     }
     .label{
       font-size: 60%;
@@ -397,53 +396,20 @@ img{
    }
 
 
-   /* @media (orientation: portrait) {
-    .overlay{
-        display: flex;
-        background: black;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 100;
-    
-    }
-    .overlay-content{
-        color: #fff;
-        text-align: center;
-        font-size: 60px;
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    }
 
- */
-
-
-
-
-/* @media only screen 
+@media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+  and (-webkit-min-device-pixel-ratio: 1) { 
     .column {
       width: calc(100% / 9);
     }
     .lifepoints{
       margin-left: 50%;
-      height: 76px;
-    }
-    .logo{
-      width: 123px;
-      bottom: 8%;
-      left: 0;
     }
     .statsmenu{
-      top: 33px;
-      left: 147px;
+      top: -13px;
+      left: 400px;
     }
     .label{
       font-size: 60%;
@@ -452,33 +418,14 @@ img{
       height: 50%;
       width: 50%;
     }
-} */
+    .logo{
+      width: 91px;
+      bottom: 31%;
+      left: 45px;
+      height: -webkit-fill-available;
+    }
+}
 
-
-/* Portrait */
-/* @media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-
-} */
-
-/* Landscape */
-/* @media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-  } */
-/* @media(min-width: 425px){
-  .column {
-    width: calc(100% / 9);
-  }
-  .logo {
-    margin-left: 36%;
-  }
-} */
 
 
 /*card back dimensions are 262 x 377 aka 1.43
