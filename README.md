@@ -25,7 +25,7 @@ A step by step series of examples that tell you how to get a development env run
 $ git clone https://github.com/[user_name]/memory-match.git
 ```
 
-2. Navigate to and open the ```/memory_match``` directory 
+2. Navigate to and open the ```/memory-match``` directory 
 3. Open via the ```index.html file``` and enjoy! 
 
 
