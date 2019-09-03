@@ -1,5 +1,6 @@
 # Memory Match (A YU-GI-OH! Themed Game)
 
+![](memorymatch.gif)
 * Live Demo: [https://memory-match.andrewly.dev](https://memory-match.andrewly.dev)
 
 ## Overview
