@@ -23,19 +23,18 @@ $ git clone https://github.com/[user_name]/memory-match.git
 3. Open via the ```index.html file``` and enjoy! 
 
 
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Built With
 
-* [JavaScript](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [jQuery](https://maven.apache.org/) - Dependency Management
-* [HTML](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-* [CSS](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-* [Object-Oriented Programming](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [JavaScript](https://www.ecma-international.org/publications/standards/Ecma-262.htm) - The web framework used
+* [jQuery](https://jquery.com/) - The JavaScript library used
+* [HTML]- Used to generate markup
+* [CSS] - Used for styling
+* [Object-Oriented Programming] - Used to as programming paradigm
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://opensource.org/licenses/mit-license.php) file for details
 
 ## Acknowledgments
 
