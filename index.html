@@ -9,6 +9,8 @@
         <script src="main.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="shortcut icon" type="image/png" href="/images/ygorgfavicon.png">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
 
     </head>
     <body>
@@ -21,6 +23,13 @@
             <div class="lifepoints"><div class="lifepointsFlash"></div></div>   
           </div>
         
+        <div class="soundContainer">
+            <div class="sound">
+                <div class="soundButton fas fa-pause-circle" id="pause"></div>
+            </div>
+
+        </div>
+    
             <div class="statsmenu">
               <div class="attempts">
                 <div class="label">ATTEMPTS:</div><div class="attemptValue"></div>
@@ -34,13 +43,17 @@
               <div class="gamesplayed">
                 <div class="label">GAMES PLAYED:</div><div class="gamesValue"></div>
               </div> 
+              
               <div class="buttonContainer">
+
                   <a type="button" id="resetButton" class="btn btn-danger resetButton" value="Refresh Page">RESET</a>
                 <a type="text" id="aboutButton" class="btn btn-warning aboutButton" href="https://www.andrewly.dev/" target="_blank">ABOUT</a>
                
               </div>
+            
+
           </div>
-         
+
         </div>
         <div class="boardContainer">
         <div class="cardContainer">

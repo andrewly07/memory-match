@@ -10,7 +10,7 @@ var attempts = 0;
 var accuracy = 0;
 var games_played = 0;
 var pointCounter = 8000;
-
+let soundIsOn = true;
 
 var cardImages = [
   'images/blueeyes.png',
@@ -73,9 +73,21 @@ class MemoryMatchGame{
   }
   playSound() {
     var player = new Audio('sounds/yugiohthemesong.mp3');
+    var pauseButton = document.getElementById("pause");
     player.volume = .3;
     player.play();
     player.loop = true;
+    pauseButton.onclick = function() {
+      if (soundIsOn === true) {
+        player.pause();
+        soundIsOn = false;
+        $(this).removeClass("fas fa-pause-circle").addClass("fas fa-play-circle");
+      } else {
+        player.play();
+        soundIsOn = true;
+        $(this).removeClass("fas fa-play-circle").addClass("fas fa-pause-circle");
+      }
+    };
   }
   lifepointSound(){
     var lifeSound = new Audio('sounds/lifepointcounter.mp3');
