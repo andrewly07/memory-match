@@ -207,7 +207,16 @@ img{
   height: 100%;
   backface-visibility: hidden;
 }
-
+.soundContainer{
+  float: right;
+  margin-right: 28%;
+  margin-top: 2%;
+}
+.soundButton {
+  font-size: 3em;
+  cursor: pointer;
+  color: lightgray;
+}
 
 .back {
   transform: rotateY(180deg);
