@@ -1,102 +1,111 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Yu-Gi-Oh! Memory Match</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <script src="main.js" type="text/javascript"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="shortcut icon" type="image/png" href="/images/ygorgfavicon.png">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+<head>
+  <title>Yu-Gi-Oh! Memory Match</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="main.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="/images/ygorgfavicon.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
 
-    </head>
-    <body>
-      <div class="introPage hide">
-        <button id="playButton" class="btn-danger lg" type="button">START</button>
-      </div>
-      <div class="mainContainer hide">
-        <div class="header">
-          <div class="logo">
-            <div class="lifepoints"><div class="lifepointsFlash"></div></div>   
-          </div>
-        
-        <div class="soundContainer">
-            <div class="sound">
-                <div class="soundButton fas fa-pause-circle" id="pause"></div>
-            </div>
+</head>
 
-        </div>
-    
-            <div class="statsmenu">
-              <div class="attempts">
-                <div class="label">ATTEMPTS:</div><div class="attemptValue"></div>
-              </div>   
-              <div class="accuracy">
-                <div class="label">ACCURACY:</div><div class="accuracyValue"></div>
-              </div>
-              <div class="matches">
-                <div class="label">MATCHES:</div><div class="matchValue"></div>
-              </div>
-              <div class="gamesplayed">
-                <div class="label">GAMES PLAYED:</div><div class="gamesValue"></div>
-              </div> 
-              
-              <div class="buttonContainer">
-
-                  <a type="button" id="resetButton" class="btn btn-danger resetButton" value="Refresh Page">RESET</a>
-                <a type="text" id="aboutButton" class="btn btn-warning aboutButton" href="https://www.andrewly.dev/" target="_blank">ABOUT</a>
-               
-              </div>
-            
-
-          </div>
-
-        </div>
-        <div class="boardContainer">
-        <div class="cardContainer">
+<body>
+  <div class="introPage hide">
+    <button id="playButton" class="btn-danger lg" type="button">START</button>
+  </div>
+  <div class="mainContainer hide">
+    <div class="header">
+      <div class="logo">
+        <div class="lifepoints">
+          <div class="lifepointsFlash"></div>
         </div>
       </div>
-      </div>
-             <div id="loserModal" class="modal-content loser">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="close"> 
-                <span aria-hidden="true">&times;</span>
-        </button>
-              <h4 class="modal-title">"I-I LOST!?...NOOOOOO!"</h4>
-            </div>
-            <div class="modal-body2">
-              <img src="https://media.giphy.com/media/K7NHFtsLG4nqU/giphy.gif" alt="kaiba losing"/>
-            </div>
-            <div class="modal-footer">
-              <a id="modalResetButton" type="button" class="btn btn-danger btn-block" data-dismiss="modal">Rematch?</a> 
-            </div>
-          </div> 
 
-      <div id="winnerModal" class="modal-content winner">
-          <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="close"> 
-                  <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title">YOU HAVE THE HEART OF THE CARDS!</h4>
-          </div>
-          <div class="modal-body2">
-            <img src="https://media.giphy.com/media/Snd51fjjX6s0M/giphy.gif" alt="yugi draws exodia"/>
-          </div>
-          <div class="modal-footer">
-            <button id="modalResetButton" type="button" class="btn btn-danger btn-block" data-dismiss="modal">Play Again?</button> 
-          </div>
-        </div>          
-        <div class="overlay">
-            <div class="overlayContainer">
-            <img class="overlayPicture" src="images/landscape-mode.gif">
-            </div>
-            <h3>For Best Experience, Change To Landscape Mode</h3>
-          </div>
-            
-    </body>
-  
+      <div class="soundContainer">
+        <div class="sound">
+          <div class="soundButton fas fa-pause-circle" id="pause"></div>
+        </div>
+
+      </div>
+
+      <div class="statsmenu">
+        <div class="attempts">
+          <div class="label">ATTEMPTS:</div>
+          <div class="attemptValue"></div>
+        </div>
+        <div class="accuracy">
+          <div class="label">ACCURACY:</div>
+          <div class="accuracyValue"></div>
+        </div>
+        <div class="matches">
+          <div class="label">MATCHES:</div>
+          <div class="matchValue"></div>
+        </div>
+        <div class="gamesplayed">
+          <div class="label">GAMES PLAYED:</div>
+          <div class="gamesValue"></div>
+        </div>
+
+        <div class="buttonContainer">
+
+          <a type="button" id="resetButton" class="btn btn-danger resetButton" value="Refresh Page">RESET</a>
+          <a type="text" id="aboutButton" class="btn btn-warning aboutButton" href="https://www.andrewly.dev/"
+            target="_blank">ABOUT</a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="boardContainer">
+      <div class="cardContainer">
+      </div>
+    </div>
+  </div>
+  <div id="loserModal" class="modal-content loser">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h4 class="modal-title">"I-I LOST!?...NOOOOOO!"</h4>
+    </div>
+    <div class="modal-body2">
+      <img src="https://media.giphy.com/media/K7NHFtsLG4nqU/giphy.gif" alt="kaiba losing" />
+    </div>
+    <div class="modal-footer">
+      <a id="modalResetButton" type="button" class="btn btn-danger btn-block" data-dismiss="modal">Rematch?</a>
+    </div>
+  </div>
+
+  <div id="winnerModal" class="modal-content winner">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h4 class="modal-title">YOU HAVE THE HEART OF THE CARDS!</h4>
+    </div>
+    <div class="modal-body2">
+      <img src="https://media.giphy.com/media/Snd51fjjX6s0M/giphy.gif" alt="yugi draws exodia" />
+    </div>
+    <div class="modal-footer">
+      <button id="modalResetButton" type="button" class="btn btn-danger btn-block" data-dismiss="modal">Play
+        Again?</button>
+    </div>
+  </div>
+  <div class="overlay">
+    <div class="overlayContainer">
+      <img class="overlayPicture" src="images/landscape-mode.gif">
+    </div>
+    <h3>For Best Experience, Change To Landscape Mode</h3>
+  </div>
+
+</body>
+
 </html>
-
