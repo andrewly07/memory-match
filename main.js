@@ -56,6 +56,8 @@ class MemoryMatchGame{
     this.showLifePoints = this.showLifePoints.bind(this);
     this.showWinModal = this.showWinModal.bind(this);
     this.showLoseModal = this.showLoseModal.bind(this);
+    this.showLoseModalInTime = this.showLoseModalInTime.bind(this);
+    this.showWinModalInTime = this.showWinModalInTime.bind(this);
     this.shuffle = this.shuffle.bind(this);
     this.addEventHandlers();
   }
@@ -132,7 +134,7 @@ class MemoryMatchGame{
       this.checkForMatch();
     }
     if(this.stats.matches === total_possible_matches){
-      this.showWinModal();
+      this.showWinModalInTime();
     } 
   }
   checkForMatch(){
@@ -151,7 +153,7 @@ class MemoryMatchGame{
       this.display_stats();
     }
     if(pointCounter === 0){
-      this.showLoseModal();
+      this.showLoseModalInTime();
     }
   }
   hideCardsInTime( timeToWait ){
@@ -193,6 +195,13 @@ class MemoryMatchGame{
   showLoseModal(){
     $('#loserModal').modal('show');
  }
+
+ showLoseModalInTime(){
+   setTimeout(this.showLoseModal, 1500);
+ }
+ showWinModalInTime(){
+  setTimeout(this.showWinModal, 1500);
+}
 }
 
 class MMCard{
