@@ -165,6 +165,7 @@ class MemoryMatchGame{
     this.clickedCards = [];
   }
   resetGame(){
+    if(this.stats.attempts >= 1){
     pointCounter = 8000;
     $('.card').removeClass('flipped');
     $('.lifepoints').text(pointCounter);
@@ -176,6 +177,7 @@ class MemoryMatchGame{
     this.shuffle();
     this.createCards();
     this.display_stats();
+    }
   }
   display_stats(){
     if(this.stats.attempts === 0){
