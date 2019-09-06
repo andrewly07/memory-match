@@ -392,11 +392,14 @@ img{
       height: -webkit-fill-available;
     }
     .statsmenu{
-      font-size: 10px;
+      font-size: 7px;
       top: -8px;
       left: 58%;
       bottom:18%;
 
+    }
+    .btn{
+      font-size: 7px;
     }
 
 }
