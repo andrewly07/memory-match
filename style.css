@@ -138,6 +138,7 @@ img{
   transition: transform 0.6s;
   transform-style: preserve-3d;
   margin: 0 auto 20px; 
+  cursor: pointer;
 } 
 
 
